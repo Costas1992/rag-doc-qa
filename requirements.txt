@@ -1,0 +1,8 @@
+pymupdf
+langchain-text-splitters
+sentence-transformers
+chromadb
+transformers
+fastapi
+uvicorn[standard]
+python-multipart
