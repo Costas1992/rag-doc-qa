@@ -1,0 +1,32 @@
+{"id": "q01", "question": "Where is the company's head office?", "relevant_ids": ["s1"]}
+{"id": "q02", "question": "How many people work here?", "relevant_ids": ["s1"]}
+{"id": "q03", "question": "What industries do our customers come from?", "relevant_ids": ["s1"]}
+{"id": "q04", "question": "When was Fjordline started?", "relevant_ids": ["s1"]}
+{"id": "q05", "question": "What hours do I have to be online every day?", "relevant_ids": ["s2"]}
+{"id": "q06", "question": "How long is a normal work week?", "relevant_ids": ["s2"]}
+{"id": "q07", "question": "Can I save up extra hours and use them next month?", "relevant_ids": ["s2"]}
+{"id": "q08", "question": "Who needs to sign off before I work overtime?", "relevant_ids": ["s2"]}
+{"id": "q09", "question": "How much time off do I get per year?", "relevant_ids": ["s3"]}
+{"id": "q10", "question": "I'm 62, do I get extra holiday?", "relevant_ids": ["s3"]}
+{"id": "q11", "question": "How early must I book my holiday?", "relevant_ids": ["s3"]}
+{"id": "q12", "question": "Can I take a day off without telling anyone in advance?", "relevant_ids": ["s3"]}
+{"id": "q13", "question": "Is my pay covered while I'm on leave with a newborn?", "relevant_ids": ["s3"]}
+{"id": "q14", "question": "How many days a week can I work from home?", "relevant_ids": ["s4"]}
+{"id": "q15", "question": "Can I be fully remote?", "relevant_ids": ["s4"]}
+{"id": "q16", "question": "Do I need my camera on in calls when I'm at home?", "relevant_ids": ["s4"]}
+{"id": "q17", "question": "Can I get a Linux machine instead of a Mac?", "relevant_ids": ["s5"]}
+{"id": "q18", "question": "Is there money for a desk and chair at home?", "relevant_ids": ["s5"]}
+{"id": "q19", "question": "When do I have to hand in receipts to get paid back this month?", "relevant_ids": ["s5"]}
+{"id": "q20", "question": "Do big purchases need approval first?", "relevant_ids": ["s5"]}
+{"id": "q21", "question": "Will the company pay for a certification course?", "relevant_ids": ["s6"]}
+{"id": "q22", "question": "What's the yearly training budget?", "relevant_ids": ["s6"]}
+{"id": "q23", "question": "What is Fjord Friday?", "relevant_ids": ["s6"]}
+{"id": "q24", "question": "Do I get anything towards a gym membership?", "relevant_ids": ["s7"]}
+{"id": "q25", "question": "Is there private health insurance?", "relevant_ids": ["s7"]}
+{"id": "q26", "question": "Can my family talk to a counsellor through work?", "relevant_ids": ["s7"]}
+{"id": "q27", "question": "How do I report harassment without giving my name?", "relevant_ids": ["s8"]}
+{"id": "q28", "question": "Who do I email with questions about the handbook?", "relevant_ids": ["s8"]}
+{"id": "q29", "question": "What happens to unused budget or days at the end of the year?", "relevant_ids": ["s3", "s6"]}
+{"id": "q30", "question": "Which rules apply to the Bergen team?", "relevant_ids": ["s1", "s4"]}
+{"id": "q31", "question": "How much money do I get for things outside the salary?", "relevant_ids": ["s5", "s6", "s7"]}
+{"id": "q32", "question": "Do I have to be reachable during core hours on remote days?", "relevant_ids": ["s4", "s2"]}
