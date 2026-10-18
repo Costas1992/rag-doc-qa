@@ -6,15 +6,17 @@ Tunes this app's retrieval with [rag-autotune](https://github.com/Costas1992/rag
 |---|---|---|
 | `adapter.py` | wraps the production chunker (`src/ingestion.py`), embedding model and Chroma (in-memory, so `chroma_db/` is never touched) | human only, locked |
 | `evalset.jsonl` | 32 questions about `data/handbook.pdf`, labelled with handbook sections `s1`-`s8` | human only, locked |
+| `../data/handbook.pdf`, `../src/ingestion.py` | data and production chunker the adapter uses | locked with `--lock` |
 | `config.py` | chunk_size, chunk_overlap, top_k, embedding_model, query_prefix | the agent, via `--set` |
 
-**Metric: recall@3 over handbook sections.** Each retrieved chunk counts as every section it contains, and the list is cut at 3, so a chunk spanning several sections uses several slots. Big chunks can't score well just by containing everything.
+**Metric: MRR@3 over handbook sections** (recall@3 also works, but on ~9 chunks it saturates). Each retrieved chunk counts as every section it contains, and the list is cut at 3, so a chunk spanning several sections uses several slots. Big chunks can't score well just by containing everything.
 
 Why not plain chunk-level recall@3: the handbook is ~9 chunks, so 3 chunks is a third of the document and almost any config scores ~1.0.
 
 ```bash
 cd autotune
-rag-autotune init --eval evalset.jsonl --adapter adapter.py --config config.py --k 3
+rag-autotune init --eval evalset.jsonl --adapter adapter.py --config config.py --k 3 --metric mrr \
+  --lock ../data/handbook.pdf --lock ../src/ingestion.py
 rag-autotune run -m "baseline"
 ```
 

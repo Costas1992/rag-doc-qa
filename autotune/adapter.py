@@ -47,16 +47,22 @@ def _labels(chunk, text, marks, cursor):
     if start < 0:
         start = text.find(chunk)
     if start < 0:
-        return ["s?"], cursor
+        # Fail loudly: a silent "s?" label would score a correct retrieval as a miss.
+        raise ValueError("chunk not found verbatim in the handbook text; the chunker changed "
+                         f"the text, so section labels can't be assigned: {chunk[:60]!r}")
     end = start + len(chunk)
     bounds = [m[0] for m in marks] + [len(text)]
-    hits = []
+    overlaps = []
     for i, (s_start, sid) in enumerate(marks):
         ov = max(0, min(end, bounds[i + 1]) - max(start, s_start))
-        if ov >= MIN_OVERLAP and sid != "s0":  # s0 = title block, never an answer
-            hits.append((ov, sid))
-    hits.sort(reverse=True)
-    return [sid for _, sid in hits] or ["s?"], start + 1
+        if ov > 0:
+            overlaps.append((ov, sid))
+    overlaps.sort(reverse=True)
+    # Sections with a real share of the chunk (s0 = title block, never an answer).
+    hits = [sid for ov, sid in overlaps if ov >= MIN_OVERLAP and sid != "s0"]
+    # Tiny chunks (title block, short tail pieces) get their largest section, so every
+    # chunk has a label and nothing is silently scored as "s?".
+    return hits or [overlaps[0][1]], start + 1
 
 
 def build_index(config):
